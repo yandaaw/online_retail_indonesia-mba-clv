@@ -22,6 +22,33 @@ Analisis asosiasi atau association rule mining adalah teknik data mining untuk m
 
 Market basket analysis merupakan suatu analisa atas perilaku konsumen secara spesifik dari suatu golongan / kelompok tertentu yang bersumber dari data transaksi penjualan barang, kartu kredit, kartu lotere, kupon diskon, maupun panggilan keluhan pelanggan. Market basket analysis umumnya dimanfaatkan sebagai titik awal pencarian pengetahuan dari suatu transaksi data ketika kita tidak mengetahui pola spesifik apa yang kita cari. Kebutuhan market basket analysis berawal dari keakuratan dan manfaat yang dihasilkannya dalam wujud aturan assosiasi (association rules). Yang dimaksud dengan association rules adalah pola-pola keterkaitan data dalam basis data. Data hasil proses market basket analysis dapat dimanfaatkan untuk menentukan product bundling maupun product placement dari toko retail maupun online yang kita miliki. 
 
+## Dataset Information
+Dataset yang digunakan dapat langsung di download pada link website [berikut](https://bit.ly/2USHhwA). Atau anda dapat mendownload file dataset pada repository ini. <br>
+Berikut merupakan informasi tabel-tabel pada dataset yang digunakan :
+- Variable-variable dalam dataset yang digunakan:
+- InvoiceDate = Tanggal dan waktu pembelian barang
+- BRANCH_SPLR = ID dari cabang suplier
+- BRANCHNAME_SPLR = Merupakan kota cabang dari suplier
+- warehouseProductsID = Merupakan kode Gudang stok dari sebuah barang
+- BARCODEID = Merupakan kode barcode distribusi dari sebuah barang
+- StockCode = Merupakan kode stok dari sebuah barang
+- PRODUCT = Deskripsi dari produk
+- PRODUCT_CATEGORY = Kategori dari produk
+- Quantity = Jumlah barang yang dibeli pada sebuah transaksi
+- UnitPrice = Harga per unit barang dalam satuan dolar
+- UnitPriceRupiah = Harga per unit barang dalam satuan rupiah
+- oldCUSTID = ID lama dari pelanggan
+- CustomerID = ID dari pelanggan
+- CUSTNAME = Nama dari pelanggan
+- ADDRESS = Deskripsi alamat
+- KOTA = Deskripsi kota
+- PROVINSI = Deskripsi provinsi
+- NEGARA = Deskripsi Negara
+- CHANNELID_SPLR = ID dari suplier
+- CHANNELNAME_SPLR = Jenis channel suplier
+- SUBDISTID = ID dari distributor
+- SUBDIST_NAME = Nama dari distributor
+
 ## Process Life Cycle
 **1. Define Problem Statement**
 - Ruang Lingkup yang digunakan adalah Product Purchases.
@@ -53,29 +80,12 @@ Secara definitive exploratory data analysis mengacu pada proses kritis dalam mel
 - Proses pengiriman dan penerimaan data secara elektronik dari dua atau lebih alat yang terhubung kedalam sebuah jaringan (network) melalui suatu media.
 - Interpretation / evalution yang merupakan pola informasi yang dihasilkan dari proses data mining perlu ditampilkan dalam bentuk yang mudah dimengerti oleh pihak yang berkepentingan. Tahap ini mencakup pemeriksaan apakah pola atau informasi yang ditemukan bertentangan dengan fakta atau hipotesis yang ada sebelumnya.
 
-## Dataset Information
-Dataset yang digunakan dapat langsung di download pada link website [berikut](https://bit.ly/2USHhwA). Atau anda dapat mendownload file dataset pada repository ini. <br>
-Berikut merupakan informasi tabel-tabel pada dataset yang digunakan :
-- Variable-variable dalam dataset yang digunakan:
-- InvoiceDate = Tanggal dan waktu pembelian barang
-- BRANCH_SPLR = ID dari cabang suplier
-- BRANCHNAME_SPLR = Merupakan kota cabang dari suplier
-- warehouseProductsID = Merupakan kode Gudang stok dari sebuah barang
-- BARCODEID = Merupakan kode barcode distribusi dari sebuah barang
-- StockCode = Merupakan kode stok dari sebuah barang
-- PRODUCT = Deskripsi dari produk
-- PRODUCT_CATEGORY = Kategori dari produk
-- Quantity = Jumlah barang yang dibeli pada sebuah transaksi
-- UnitPrice = Harga per unit barang dalam satuan dolar
-- UnitPriceRupiah = Harga per unit barang dalam satuan rupiah
-- oldCUSTID = ID lama dari pelanggan
-- CustomerID = ID dari pelanggan
-- CUSTNAME = Nama dari pelanggan
-- ADDRESS = Deskripsi alamat
-- KOTA = Deskripsi kota
-- PROVINSI = Deskripsi provinsi
-- NEGARA = Deskripsi Negara
-- CHANNELID_SPLR = ID dari suplier
-- CHANNELNAME_SPLR = Jenis channel suplier
-- SUBDISTID = ID dari distributor
-- SUBDIST_NAME = Nama dari distributor
+## Results and Conclusion
+Dari result table yang telah di filter, dapat kita tarik kesimpulan bahwa produk-produk yang dibeli secara bersamaan oleh customer di daerah JAWA TENGAH terhadap rule asosiasi pada dataset dengan min_support 0.1 / 10%, min_threshold = 1, dan nilai lift sebesar lebih dari samadengan 1 serta tingkat confidence minimal yang diperhitungkan sebesar 0.8 (80%) diantaranya adalah:
+- sabun, shampoo, obat-obatan, parfum dengan kosmetik.
+- kosmetik, susu, obat-obatan dengan minuman.
+- kosmetik, alat rumah tangga, minuman dengan sabun dan samphoo. <br>
+
+Yang mana nilai conviction dari hasil-hasil yang didapat bernilai lebih dari 1, artinya hasil nilai rules yang dibangun dapat di anggap akurat. Kemudian sebagai tambahan, produk atau barang yang menjadi kombinasi produk pertama untuk frekuensi yang paling banyak adalah kosmetik, minuman, sabun dan samphoo.
+
+Untuk dokumentasi market basket analysis pada project ini secara lengkap, dapat dibaca pada [Link Berikut](https://yandaafrida.medium.com/association-rule-market-basket-analysis-menggunakan-python-a9c49b4bfc69)
